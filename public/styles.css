@@ -1,8 +1,59 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
+
 h1 {
     text-align: center;
+    font-size: 60px;
+    font-family: 'Climate Crisis', cursive;
 }
 
 p {
     text-align: center;
-    color: red;
+    margin: 5% auto;
+    width: 60%;
+    max-width: 500px;
+    min-width: 400px;
+    line-height: 1.6;
+    border: 10px solid #3443ea;
+    border-radius: 15px;
+    padding: 15px;
+    font-size: 22px;
+    font-weight: 600;;
+
+}
+
+table {
+    max-width: 600px;
+}
+
+table, th, td {
+    border: 5px solid white;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #3443ea;
+    color: whitesmoke;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.my {
+    text-decoration: underline;
+    color: #3443ea;
+}
+
+.Flix {
+    color: rgb(37, 37, 37);
 }
