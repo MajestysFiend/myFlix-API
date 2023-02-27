@@ -1,20 +1,58 @@
 body {
     font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+}
+
+@keyframes leftSlide {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes rightSlide {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes upSlide {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 h1 {
+    animation: 1s ease-out 0s 1 leftSlide;
     text-align: center;
     font-size: 60px;
     font-family: 'Climate Crisis', cursive;
 }
 
 p {
+    animation: 1.1s ease-out 0s 1 rightSlide;
     text-align: center;
     margin: 5% auto;
     width: 60%;
     max-width: 500px;
     min-width: 400px;
-    line-height: 1.6;
     border: 10px solid #3443ea;
     border-radius: 15px;
     padding: 15px;
@@ -24,7 +62,8 @@ p {
 }
 
 table {
-    max-width: 600px;
+    animation: 1.2s ease-out 0s 1 upSlide;
+    max-width: 1200px;
 }
 
 table, th, td {
@@ -56,4 +95,11 @@ td {
 
 .Flix {
     color: rgb(37, 37, 37);
+}
+
+.none {
+    text-align: center;
+    color: red;
+    font-size: 24px;
+    font-weight: 800;
 }
