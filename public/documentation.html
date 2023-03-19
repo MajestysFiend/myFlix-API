@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Achievement 2 Project</title>
+        <title>myFlix Documentation</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Lato&display=swap" rel="stylesheet">
@@ -26,6 +26,7 @@
                 <th>Request data type</th>
                 <th>URL</th>
                 <th>Response</th>
+                <th>Example</th>
             </tr>
             <tr>
                 <td>GET</td>
@@ -38,21 +39,21 @@
                 <td>GET</td>
                 <td>Get data about a single movie by title</td>
                 <td class="none">X</td>
-                <td>/movies/:title</td>
+                <td>/movies/:Title</td>
                 <td>A JSON object containing data on a single movie title</td>
             </tr>
             <tr>
                 <td>GET</td>
                 <td>Get data about a genre by name</td>
                 <td class="none">X</td>
-                <td>/movies/genre/:genreName</td>
+                <td>/movies/genre/:Name</td>
                 <td>A JSON object containing data on a single genre</td>
             </tr>
             <tr>
                 <td>GET</td>
                 <td>Get data about a director by name</td>
                 <td class="none">X</td>
-                <td>/movies/director/:directorName</td>
+                <td>/movies/director/:Name</td>
                 <td>A JSON object containing data on a single director</td>
             </tr>
             <tr>
@@ -63,6 +64,13 @@
                 <td>A text message indicating a successful/unsuccessful registration</td>
             </tr>
             <tr>
+                <td>POST</td>
+                <td>Add a movie to your list of favorites by title</td>
+                <td class="none">X</td>
+                <td>/users/:Username/movies/:MovieID</td>
+                <td>A text message indicating a movie was successfully/unsuccessfully added to favorites</td>
+            </tr>
+            <tr>
                 <td>PUT</td>
                 <td>Update user information</td>
                 <td class="none">X</td>
@@ -70,24 +78,17 @@
                 <td>A text message indicating user information was successfully/unsuccessfully updated</td>
             </tr>
             <tr>
-                <td>PUT</td>
-                <td>Add a movie to your list of favorites by title</td>
-                <td class="none">X</td>
-                <td>/users/:id/:movieTitle</td>
-                <td>A text message indicating a movie was successfully/unsuccessfully added to favorites</td>
-            </tr>
-            <tr>
                 <td>DELETE</td>
                 <td>Remove a movie from your list of favorites</td>
                 <td class="none">X</td>
-                <td>/users/:id/:movieTitle</td>
+                <td>/users/:Username/movies/:MovieID</td>
                 <td>A text message indicating a movie was successfully/unsuccessfully removed from favorites</td>
             </tr>
             <tr>
                 <td>DELETE</td>
                 <td>Remove user registration</td>
                 <td class="none">X</td>
-                <td>/users/:id</td>
+                <td>/users/:Username</td>
                 <td>A text message indicating the user was successfully/unsuccessfully removed</td>
             </tr>
 
