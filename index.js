@@ -11,60 +11,6 @@ app.use(morgan('common'));
 
 app.use(express.static('public'));
 
-let movies = [
-    {
-        Title: 'The NeverEnding Story',
-        Director: 'Wolfgang Petersen',
-        Genre: {
-            Name: 'Fantasy'
-        }
-    },
-    {
-        Title: 'The Lion King',
-        Director: 'Roger Allers'
-    },
-    {
-        Title: 'Jurrasic Park',
-        Director: 'Steven Spielberg'
-    },
-    {
-        Title: 'Pulp Fiction',
-        Director: 'Quentin Tarantino'
-    },
-    {
-        Title: 'The Lord of the Rings: The Return of the King',
-        Director: 'Peter Jackson'
-    },
-    {
-        Title: 'The Fifth Element',
-        Director: 'Luc Besson'
-    },
-    {
-        Title: 'Who Framed Roger Rabbit',
-        Director: 'Robert Zemeckis'
-    },
-    {
-        Title: 'Beetlejuice',
-        Director: 'Tim Burton'
-    },
-    {
-        Title: 'Falling Down',
-        Director: 'Joel Schumacher'
-    },
-    {
-        Title: 'Fight Club',
-        Director: 'David Fincher'
-    }
-];
-
-let users = [
-    {
-        name: 'Tristan',
-        id: 1,
-        favoriteMovies: []
-    }
-];
-
 // ---GET requests---
 // Get list of movies
 app.get('/movies', (req, res) => {
