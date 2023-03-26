@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 let movieSchema = mongoose.Schema({
     Title: { type: String, required: true },
@@ -11,7 +11,6 @@ let movieSchema = mongoose.Schema({
         Name: String,
         Bio: String
     },
-    Actors: [String],
     ImagePath: String,
     Featured: Boolean
 });
