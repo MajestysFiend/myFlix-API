@@ -19,9 +19,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/cfDB', {
 app.use(morgan('common'));
 app.use(express.static('public'));
 
-let auth = require('./auth')(app);
+let auth = require('./auth.js')(app);
 const passport = require('passport');
-require('./passport');
+require('./passport.js');
 // ---GET requests---
 
 // Get list of all movies
@@ -91,7 +91,7 @@ app.get('/movies/director/:Name', passport.authenticate('jwt', { session: false 
 // ---POST requests---
 
 // Add new user
-app.post('/users', (req, res) => {
+app.post('/users', passport.authenticate('jwt', { session: false }), (req, res) => {
     Users.findOne({ Username: req.body.Username })
         .then((user) => {
             if (user) {
