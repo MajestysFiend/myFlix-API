@@ -43,8 +43,7 @@ const passport = require('passport');
 require('./passport.js');
 // ---GET requests---
 
-// Get list of all movies
-app.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get('/', (req, res) => {
     res.send('Welcome to myFlix!');
 });
 // Get a list of all users
