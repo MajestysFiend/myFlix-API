@@ -4,7 +4,7 @@ This web application will provide users with access to information about differe
 movies, directors, and genres. Users will be able to sign up, update their personal 
 information, and create a list of their favorite movies!
 
-Documentation for this project is currently deployed on [GitHub Pages](https://majestysfiend.github.io/Pokedex/)
+The app can be used here: [https://myflixapplication.herokuapp.com/](https://myflixapplication.herokuapp.com/)
 
 ## Dependencies
 
@@ -24,7 +24,7 @@ Documentation for this project is currently deployed on [GitHub Pages](https://m
 - Passport Local 1.0.0
 - UUID (Universally Unique Identifier) 9.0.0
 
-##Development Dependencies
+## Development Dependencies
 
 - Nodemon: 2.0.20
 
