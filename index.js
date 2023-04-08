@@ -25,9 +25,9 @@ app.use(express.static('public'));
 const cors = require('cors');
 app.use(cors());
 
-let allowedOrigins = ['http://localhost:8080', 'http://testsite.com'];
+/*let allowedOrigins = ['http://localhost:8080', 'http://testsite.com'];
 
-/* app.use(cors({
+ app.use(cors({
     origin: (origin, callback) => {
         if (!origin) return callback(null, true);
         if (allowedOrigins.indexOf(origin) === -1) { // If a specific origin isn’t found on the list of allowed origins
@@ -43,11 +43,12 @@ const passport = require('passport');
 require('./passport.js');
 // ---GET requests---
 
+
 app.get('/', (req, res) => {
     res.send('Welcome to myFlix!');
 });
 // Get a list of all users
-app.get('/users', (req, res) => {
+app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) => {
     Users.find()
         .then((users) => {
             res.status(201).json(users);
