@@ -63,7 +63,7 @@ app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) =
         });
 });
 // Get data on a single user by Username
-app.get('/users/:Username', (req, res) => {
+app.get('/users/:Username', passport.authenticate('jwt', { session: false }), (req, res) => {
     Users.findOne({ Username: req.params.Username })
         .then((user) => {
             if (!user) {
@@ -234,7 +234,7 @@ app.delete('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { se
         });
 });
 // Remove a user by username
-app.delete('/users/:Username', (req, res) => {
+app.delete('/users/:Username', passport.authenticate('jwt', { session: false }), (req, res) => {
     Users.findOneAndRemove({ Username: req.params.Username })
         .then((user) => {
             if (!user) {
