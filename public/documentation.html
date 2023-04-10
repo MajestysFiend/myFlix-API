@@ -71,6 +71,16 @@
                     </button></td>
             </tr>
             <tr>
+                <td class="getMethod">GET</td>
+                <td>Get data about a single user by Username</td>
+                <td class="none">X</td>
+                <td>/users/:Username</td>
+                <td>A JSON object containing data on a single director</td>
+                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal10">
+                        Show Example
+                    </button></td>
+            </tr>
+            <tr>
                 <td class="postMethod">POST</td>
                 <td>New user registration</td>
                 <td>A JSON object including at least a key-value pair for Username</td>
@@ -390,7 +400,7 @@ the novels of the same name by J. R. R. Tolkien.",
                             <tr>
                                 <td>http://localhost:8080/users/<span class="target">test2</span>/movies/<span
                                         class="target">640fed96b2d5936f3cb49cde</span></td>
-                                <td>Movie added to your favorites, test2!</td>
+                                <td>Movie added to favorites, test2!</td>
                             </tr>
                         </table>
                     </div>
@@ -463,7 +473,7 @@ the novels of the same name by J. R. R. Tolkien.",
                             <tr>
                                 <td>http://localhost:8080/users/<span class="target">test2</span>/movies/<span
                                         class="target">640fed96b2d5936f3cb49cde</span></td>
-                                <td>Movie removed to your favorites, test2!</td>
+                                <td>Movie removed from favorites, test2!</td>
                             </tr>
                         </table>
                     </div>
@@ -502,6 +512,47 @@ the novels of the same name by J. R. R. Tolkien.",
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="exampleModal10" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="example10Title">Get user info by Username</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="modalTable center">
+                            <tr>
+                                <th>Input</th>
+                                <th>Output</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    http://localhost:8080/users/<span class="target">test</span>
+                                </td>
+                                <td>
+                                    {
+                                    "Username": "test",
+                                    "Password": "newpassword",
+                                    "Email": "test@test.com",
+                                    "Birthday": "01/05/1989",
+                                    "FavoriteMovies": []
+                                    }
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
 
 
 
