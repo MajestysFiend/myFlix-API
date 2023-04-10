@@ -30,5 +30,5 @@ The app can be used here: [https://myflixapplication.herokuapp.com/](https://myf
 
 ## Credits
 
-Big shout-out to [Career Foundry](https://careerfoundry.com/) for teaching me the technologies I needed to make this happen!
+Big shout-out to my mentor, tutor, and the [Career Foundry](https://careerfoundry.com/) curriculum for teaching me the technologies I needed to make this happen!
 
