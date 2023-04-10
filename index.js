@@ -15,9 +15,9 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-/*  mongoose.connect('mongodb://127.0.0.1:27017/cfDB', {
+/* mongoose.connect('mongodb://127.0.0.1:27017/cfDB', {
     useNewUrlParser: true, useUnifiedTopology: true
-});*/
+}); */
 
 mongoose.connect(process.env.CONNECTION_URI, {
     useNewUrlParser: true, useUnifiedTopology: true
@@ -29,9 +29,9 @@ app.use(express.static('public'));
 const cors = require('cors');
 app.use(cors());
 
-/*let allowedOrigins = ['http://localhost:8080', 'http://testsite.com'];
+/* let allowedOrigins = ['http://localhost:8080', 'http://testsite.com'];
 
- app.use(cors({
+app.use(cors({
     origin: (origin, callback) => {
         if (!origin) return callback(null, true);
         if (allowedOrigins.indexOf(origin) === -1) { // If a specific origin isn’t found on the list of allowed origins
@@ -56,6 +56,21 @@ app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) =
     Users.find()
         .then((users) => {
             res.status(201).json(users);
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send('Error: ' + err);
+        });
+});
+// Get data on a single user by Username
+app.get('/users/:Username', (req, res) => {
+    Users.findOne({ Username: req.params.Username })
+        .then((user) => {
+            if (!user) {
+                res.status(400).send(req.params.Username + ' was not found');
+            } else {
+                res.status(200).json(user);
+            }
         })
         .catch((err) => {
             console.error(err);
@@ -140,7 +155,6 @@ app.post('/users', [
                     })
                     .then((user) => { res.status(201).json(user).send('Welcome ' + req.body.Username + '!') })
                     .catch((error) => {
-                        console.error(error);
                         res.status(500).send('Error: ' + error);
                     })
             }
@@ -160,10 +174,7 @@ app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { sess
                 { FavoriteMovies: req.params.MovieID }
         }
     )
-        .then((updatedFavorites) => {
-            res.send('Movie added to your favorites, ' + req.params.Username + '!');
-            res.json(updatedFavorites);
-        })
+        .then(() => { res.status(200).send('Movie added to favorites, ' + req.params.Username + '!') })
         .catch((err) => {
             console.error(err);
             res.status(500).send('Error: ' + err);
@@ -196,10 +207,7 @@ app.put('/users/:Username', [
             }
         }
     )
-        .then((updatedUser) => {
-            res.send('Your information has been updated, ' + req.params.Username + '!');
-            res.json(updatedUser);
-        })
+        .then((user) => { res.status(200).json(user).send('Your info has been updated, ' + req.params.Username + '!') })
         .catch((err) => {
             console.error(err);
             res.status(500).send('Error: ' + err);
@@ -217,9 +225,8 @@ app.delete('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { se
                 { FavoriteMovies: req.params.MovieID }
         }
     )
-        .then((updatedFavorites) => {
-            res.send('Movie removed to your favorites, ' + req.params.Username + '!');
-            res.json(updatedFavorites);
+        .then(() => {
+            res.send('Movie removed from favorites, ' + req.params.Username + '!')
         })
         .catch((err) => {
             console.error(err);
