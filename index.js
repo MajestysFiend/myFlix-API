@@ -49,7 +49,7 @@ require('./passport.js');
 
 
 app.get('/', (req, res) => {
-    res.send('Welcome to myFlix!');
+    res.send('Give me all of your skystones! xD');
 });
 // Get a list of all users
 app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) => {
