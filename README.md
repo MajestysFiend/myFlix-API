@@ -1,4 +1,4 @@
-# :film_strip:myFlix:clapper:
+# :film_strip:MyFlix:clapper:
 
 This web application will provide users with access to information about different
 movies, directors, and genres. Users will be able to sign up, update their personal 
