@@ -1,8 +1,8 @@
-# :film_strip:MyFlix:clapper:
+<h1 align="center">:film_strip:MyFlix API:clapper:</h1>
 
-This web application will provide users with access to information about different
+<p align="center">This web application will provide users with access to information about different
 movies, directors, and genres. Users will be able to sign up, update their personal 
-information, and create a list of their favorite movies!
+information, and create a list of their favorite movies!</p>
 
 The app can be used here: [https://myflixapplication.herokuapp.com/](https://myflixapplication.herokuapp.com/)
 
