@@ -4,7 +4,9 @@
 movies, directors, and genres. Users will be able to sign up, update their personal 
 information, and create a list of their favorite movies!</p>
 
-The app can be used here: [https://myflixapplication.herokuapp.com/](https://myflixapplication.herokuapp.com/)
+Be sure to check out the documentation in the public folder!
+
+The app is hosted here: [https://myflixapplication.herokuapp.com/](https://myflixapplication.herokuapp.com/)
 
 ## Dependencies
 
