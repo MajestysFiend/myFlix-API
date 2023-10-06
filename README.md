@@ -1,5 +1,8 @@
 <h1 align="center">:film_strip:MyFlix API:clapper:</h1>
 
+![myflixapi](https://github.com/Tristan-Lewis/myFlix-API/assets/94727522/abd8d3d5-ee13-4cda-980c-202e0a55f03e)
+
+
 <p align="center">This web application will provide users with access to information about different
 movies, directors, and genres. Users will be able to sign up, update their personal 
 information, and create a list of their favorite movies!</p>
